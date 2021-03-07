@@ -5,12 +5,6 @@ const rover = {
     travelLog: []
 };
 
-const roverTwo = {
-    direction: "S",
-    x: 9,
-    y: 9,
-    travelLog: []
-}
 
 function moveforward(marsRover, goForward){
 
@@ -52,7 +46,6 @@ function moveforward(marsRover, goForward){
     }
 
         console.log(`Direção do Rover: ${marsRover.direction}, fases x = ${marsRover.x}, y = ${marsRover.y}`);
-        console.log(`Direção do RoverTwo: ${marsRover.direction}, fases x = ${marsRover.x}, y = ${marsRover.y}`);
 }
 
 function moveBackward(marsRover, goBackward){
@@ -122,7 +115,6 @@ function turnRight(marsRover, goRight){
     }
 }
 
-let marsRover = [rover, roverTwo];
 
 function goForward(marsRover, ordens){
     for(let i = 0; i < ordens.length; i++){
@@ -147,8 +139,6 @@ function goForward(marsRover, ordens){
 }
 
 goForward(rover, 'rffrfflfrff');
-goForward(roverTwo, 'rffrfflfrff');
 console.log(`Log de coordenadas do Rover: ${rover.travelLog.join(' - ')}`);
-console.log(`Log de coordenadas do RoverTwo: ${roverTwo.travelLog.join(' - ')}`);
 //rffrf
 //rffrfflfrff
