@@ -11,7 +11,6 @@ function moveforward(marsRover, goForward){
     if(goForward === 'f'){
 
         if(marsRover.direction === 'N'){
-            //marsRover.travelLog.push([marsRover.x, marsRover.y]);
             if(marsRover.y >= 0 && marsRover.y < 10){
                 marsRover.y--;
                 marsRover.travelLog.push([marsRover.x, marsRover.y]);
@@ -19,7 +18,6 @@ function moveforward(marsRover, goForward){
                 console.log("Você não pode sair do espaço designado!");
             }
         }else if(marsRover.direction === 'S'){
-            //marsRover.travelLog.push([marsRover.x, marsRover.y]);
             if(marsRover.y >= 0 && marsRover.y < 10){
             marsRover.y++;
             marsRover.travelLog.push([marsRover.x, marsRover.y]);
@@ -27,7 +25,6 @@ function moveforward(marsRover, goForward){
                 console.log("Você não pode sair do espaço designado!");
             }
         }else if(marsRover.direction === 'W'){
-            //marsRover.travelLog.push([marsRover.x, marsRover.y]);
             if(marsRover.x >= 0 && marsRover.x < 10){
             marsRover.x--;
             marsRover.travelLog.push([marsRover.x, marsRover.y]);
@@ -35,7 +32,6 @@ function moveforward(marsRover, goForward){
                 console.log("Você não pode sair do espaço designado!");
             }
         }else if(marsRover.direction === 'E'){
-            //marsRover.travelLog.push([marsRover.x, marsRover.y]);
             if(marsRover.x >= 0 && marsRover.x < 10){
             marsRover.x++;
             marsRover.travelLog.push([marsRover.x, marsRover.y]);
@@ -88,30 +84,37 @@ function moveBackward(marsRover, goBackward){
 
 function turnLeft(marsRover, goLeft){
     
-    if(goLeft === 'l'){
-        if(marsRover.direction === 'N'){
+    switch(goLeft === 'l'){
+        case(marsRover.direction === 'N'):
             marsRover.direction = 'W';
-        }else if(marsRover.direction === 'S'){
+        break;
+        case(marsRover.direction === 'S'):
             marsRover.direction = 'E';
-        }else if(marsRover.direction === 'W'){
+        break;
+        case(marsRover.direction === 'W'):
             marsRover.direction = 'S'
-        }else if(marsRover.direction === 'E'){
+        break;
+        case(marsRover.direction === 'E'):
             marsRover.direction = 'N';
-        }
-    }
+        break;
+    }    
 }
 
 function turnRight(marsRover, goRight){
-    if(goRight === 'r'){
-        if(marsRover.direction === 'N'){
+
+    switch(goRight === 'r'){
+        case(marsRover.direction === 'N'):
             marsRover.direction = 'E';
-        }else if(marsRover.direction === 'S'){
+        break;
+        case(marsRover.direction === 'S'):
             marsRover.direction = 'W';
-        }else if(marsRover.direction === 'W'){
-            marsRover.direction = 'N'
-        }else if(marsRover.direction === 'E'){
+        break;
+        case(marsRover.direction === 'W'):
+            marsRover.direction = 'N';
+        break;
+        case(marsRover.direction === 'E'):
             marsRover.direction = 'S';
-        }
+        break;
     }
 }
 
